@@ -13,4 +13,5 @@ install:
 		.vimrc \
 		${HOME}
 	echo 'export PS1="(${HOST_NICKNAME}) \W $$ "' >> ~/.bash_profile
+	echo 'export HOST_NICKNAME=${HOST_NICKNAME}' >> ~/.bash_profile
 endif

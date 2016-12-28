@@ -6,15 +6,24 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
+alias la='ls -la'
 alias dl='docker ps -l -q'
 alias da='docker ps -a'
 
-alias .v='vi ~/.bashrc'
-alias .b='. ~/.bashrc'
+alias vip='vi ~/.bash_profile'
+alias vir='vi ~/.bashrc'
+alias so='source ~/.bash_profile'
+
 
 
 #dir bookmarks
 function dadd() {
-  echo "alias .${1}='cd $(pwd)'">>~/.dirs_bookmarks.sh
+  echo "alias ${1}='cd $(pwd)'">>~/.dirs_bookmarks.sh
   . ~/.dirs_bookmarks.sh
+}
+
+#host bookmarks
+function hadd() {
+  echo "alias ${1}='ssh ${1}'">>~/.hosts_bookmarks.sh
+  . ~/.hosts_bookmarks.sh
 }
