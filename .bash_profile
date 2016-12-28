@@ -6,4 +6,4 @@ fi
 # User specific environment and startup programs
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 export PATH
-export PS1="(`hostname -s`) \W $ "
+export PS1="(`whoami`@`hostname -s`) \W $ "
