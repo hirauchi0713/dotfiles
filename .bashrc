@@ -28,6 +28,6 @@ function hadd() {
   echo "alias ${1}='ssh ${1}'">>~/.hosts_bookmarks.sh
   . ~/.hosts_bookmarks.sh
 }
-if [ -f ~/.hosts_bookmarks.sh]; then
+if [ -f ~/.hosts_bookmarks.sh ]; then
 	. ~/.hosts_bookmarks.sh
 fi
