@@ -1,7 +1,3 @@
-# .bash_profile
-HOST_NICKNAME=*UNKNOWN_HOST*
-export PS1="($HOST_NICKNAME) \W $ "
-
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc

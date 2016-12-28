@@ -14,7 +14,7 @@ alias .b='. ~/.bashrc'
 
 
 #dir bookmarks
-function .add() {
+function dadd() {
   echo "alias .${1}='cd $(pwd)'">>~/.dirs_bookmarks.sh
   . ~/.dirs_bookmarks.sh
 }
