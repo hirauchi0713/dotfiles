@@ -11,5 +11,6 @@ install:
 		.bash_profile \
 		.bashrc \
 		.vimrc \
+		${HOME}
 	echo 'export PS1="(${HOST_NICKNAME}) \W $$ "' >> ~/.bash_profile
 endif
