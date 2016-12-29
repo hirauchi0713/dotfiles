@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
-alias la='ls -la'
+alias la='ls -lat'
 alias dl='docker ps -l -q'
 alias da='docker ps -a'
 
