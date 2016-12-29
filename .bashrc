@@ -1,11 +1,18 @@
-# .bashrc
-
-# Source global definitions
+#
+# global rc
+#
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# User specific aliases and functions
+#
+# prompt
+#
+export PS1='[\h \t] \W \$ '
+
+#
+# alias
+#
 alias la='ls -lat'
 alias dl='docker ps -l -q'
 alias da='docker ps -a'
@@ -14,7 +21,9 @@ alias vip='vi ~/.bash_profile'
 alias vir='vi ~/.bashrc'
 alias so='source ~/.bash_profile'
 
-#dir bookmarks
+#
+# dir bookmarks
+#
 function dadd() {
   echo "alias ${1}='cd $(pwd)'">>~/.dirs_bookmarks.sh
   . ~/.dirs_bookmarks.sh
@@ -23,7 +32,9 @@ if [ -f ~/.dirs_bookmarks.sh ]; then
   . ~/.dirs_bookmarks.sh
 fi
 
-#host bookmarks
+#
+# host bookmarks
+#
 function hadd() {
   echo "alias ${1}='ssh ${1}'">>~/.hosts_bookmarks.sh
   . ~/.hosts_bookmarks.sh

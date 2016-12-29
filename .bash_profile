@@ -1,9 +1,11 @@
-# Get the aliases and functions
+#
+# .bashrc
+#
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-#User specific environment and startup programs
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-export PATH
-export PS1="(`whoami`@`hostname -s`) \W $ "
+#
+# path
+#
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
