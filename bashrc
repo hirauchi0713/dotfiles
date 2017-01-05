@@ -19,6 +19,7 @@ alias da='docker ps -a'
 
 alias vip='vi ~/.bash_profile'
 alias vir='vi ~/.bashrc'
+alias vil='vi ~/.bash_profile_local'
 alias so='source ~/.bash_profile'
 
 #
