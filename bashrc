@@ -29,6 +29,9 @@ function dadd() {
   echo "alias ${1}='cd $(pwd)'">>~/.dirs_bookmarks.sh
   . ~/.dirs_bookmarks.sh
 }
+function dadd-l() {
+  cat ~/.dirs_bookmarks.sh
+}
 if [ -f ~/.dirs_bookmarks.sh ]; then
   . ~/.dirs_bookmarks.sh
 fi
