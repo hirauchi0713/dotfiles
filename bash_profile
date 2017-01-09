@@ -6,9 +6,14 @@ if [ -f ~/.bashrc ]; then
 fi
 
 #
+# bash_completion
+#
+ [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+#
 # path
 #
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 
 #
 # .bash_profile_local
