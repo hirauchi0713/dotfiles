@@ -15,7 +15,7 @@ export PS1='[\h \t] \W \$ '
 #
 alias la='ls -lat'
 alias dl='docker ps -l -q'
-alias da='docker ps -a'
+alias da='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}\t{{.Image}}"'
 
 alias vip='vi ~/.bash_profile'
 alias vir='vi ~/.bashrc'
