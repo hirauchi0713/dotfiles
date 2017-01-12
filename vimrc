@@ -1,3 +1,8 @@
+syntax enable
+set background=dark
+colorscheme solarized
+
+
 set ts=4
 set sw=4
 set ai
@@ -13,7 +18,7 @@ set undodir=/tmp
 set hls
 set autochdir
 set nu
-set expandtab
+set noexpandtab
 
 map <Space>> :set nu<CR>
 map <Space>< :set nonu<CR>
@@ -32,14 +37,13 @@ map <Space>k <C-W>k
 
 map <Space>n :e .<CR>
 
-"status line
-"set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\
-"%m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%3l,%3c,%3p]
-"augroup myStatusLine
-"autocmd! ColorScheme * highlight StatusLine guibg=White guifg=Black
-"autocmd! ColorScheme * highlight StatusLineNC guibg=Black guifg=darkgray
-"augroup END
-"
-""html tag match
+hi Cursor cterm=bold ctermbg=Black ctermfg=White
+
+set cursorline
+hi CursorLineNr term=bold   cterm=bold ctermfg=228 ctermbg=NONE
+hi clear CursorLine
+
+
+"html tag match
 source $VIMRUNTIME/macros/matchit.vim
-let b:match_words = "<div:</div>,<p:</p>"
+let b:match_words = "<div:</div>,<p:</p>,<section:</section>"
