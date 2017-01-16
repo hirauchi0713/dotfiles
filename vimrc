@@ -2,6 +2,12 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+set ambiwidth=double
+
+set clipboard=unnamed,autoselect
+
+set si
+set ai
 
 set ts=4
 set sw=4
