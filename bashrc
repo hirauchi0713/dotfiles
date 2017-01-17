@@ -11,6 +11,11 @@ fi
 export PS1='[\h \t] \W \$ '
 
 #
+# docker-compose
+#
+export COMPOSE_FILE=docker-compose.yml:docker-compose.local.yml
+
+#
 # alias
 #
 alias la='ls -lat'
