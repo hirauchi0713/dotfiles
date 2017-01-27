@@ -2,16 +2,19 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+"abbr
+ab ml1 # vim: set et sw=2 ts=2 ai si:
+
+set modeline
+
 set ambiwidth=double
 
 set clipboard=unnamed,autoselect
 
-set si
-set ai
-
 set ts=4
 set sw=4
 set ai
+set si
 
 set imdisable
 
