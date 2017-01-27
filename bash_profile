@@ -13,7 +13,16 @@ fi
 #
 # path
 #
-export PATH=$HOME/.local/bin:$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH  #for home local
+
+#
+# go
+#
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+#export GO15VENDOREXPERIMENT=1 # for glide
 
 #
 # .bash_profile_local
