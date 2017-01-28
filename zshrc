@@ -129,3 +129,12 @@ setopt hist_ignore_dups
 
 # 開始と終了を記録
 setopt EXTENDED_HISTORY
+
+
+#
+# nvm
+#
+if [ -f ~/.nvm/nvm.sh ]; then
+	source ~/.nvm/nvm.sh
+fi
+
