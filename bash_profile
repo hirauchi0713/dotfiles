@@ -1,14 +1,14 @@
 #
 # .bashrc
 #
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-fi
+#if [ -f ~/.bashrc ]; then
+#	source ~/.bashrc
+#fi
 
 #
 # bash_completion
 #
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
 
 #
 # path
@@ -28,5 +28,5 @@ export PATH=$PATH:$GOPATH/bin
 # .bash_profile_local
 #
 if [ -f ~/.bash_profile_local ]; then
-	. ~/.bash_profile_local
+	source ~/.bash_profile_local
 fi
