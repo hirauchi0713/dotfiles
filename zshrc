@@ -27,49 +27,28 @@ setopt auto_cd
 autoload -Uz colors
 colors
 
-function git_branch() {
-	echo -n "[$(git name-rev --name-only HEAD 2> /dev/null)]"
-}
-
-function git_status() {
-	if [[ $(git status --porcelain 2>/dev/null | tail -n1) ]]; then
-		echo -n "%{$fg[red]%} x %{${reset_color}%}"
-	else
-		echo -n "%{$fg[green]%} o %{${reset_color}%}"
+function git_prompt() {
+	local branch=$(git name-rev --name-only HEAD 2> /dev/null)
+	if [[ $branch ]]; then
+		local p_branch="%{$fg[blue]%}[$branch]%{$reset_color%}"
+		local p_status
+		if [[ $(git status --porcelain 2>/dev/null) ]]; then
+			p_status="%{$fg[red]%} x %{${reset_color}%}"
+		else
+			p_status="%{$fg[green]%} o %{${reset_color}%}"
+		fi
+		echo -n "$p_branch$p_status"
 	fi
 }
 
 setopt prompt_subst
-setopt transient_rprompt
-local p_host="%{$terminfo[bold]$fg[black]}%}%{${bg[white]}%}[%m]%{${reset_color}%}"
+#setopt transient_rprompt
+local p_host="[%m]"
 local p_cdir="%F{cyan}[%~]%f"
-local p_git='%F{blue}$(git_branch)%f'
-local p_gitst='$(git_status)'
+local p_git='$(git_prompt)%f'
 PROMPT="
-$p_cdir$p_git$p_gitst
+$p_cdir$p_git
 $p_host %* %# "
-
-#autoload -Uz vcs_info
-#zstyle ':vcs_info:git:*' check-for-changes true
-#zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-#zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-#zstyle ':vcs_info:git:*' formats "%F{green}%c%u[%b]%f"
-#zstyle ':vcs_info:git:*' actionformats '[%b|%a] '
-#
-#precmd () { vcs_info }
-#RPROMPT='${vcs_info_msg_0_}'"[%* %n@%m]"
-#PROMPT="%~ %# "
-
-######################################################################
-# zplug
-#
-#export ZPLUG_HOME=$HOME/.zplug
-#source $ZPLUG_HOME/init.zsh
-#
-#zplug "zsh-users/zsh-history-substring-search"
-#
-## source plugins and add commands to $PATH
-#zplug load --verbose
 
 ######################################################################
 # alias
@@ -82,6 +61,14 @@ alias vip='vi ~/.zprofile'
 alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
 alias so='source ~/.zprofile'
+
+alias lg='git lg'
+alias lga='git lga'
+alias st='git st'
+alias cm='git commit -m'
+alias cma='git commit -am'
+alias add='git add'
+alias dif='git diff'
 
 ######################################################################
 # dir bookmarks
@@ -114,3 +101,15 @@ fi
 if [ -f ~/.nvm/nvm.sh ]; then
 	source ~/.nvm/nvm.sh
 fi
+
+######################################################################
+# zplug
+#
+#export ZPLUG_HOME=$HOME/.zplug
+#source $ZPLUG_HOME/init.zsh
+#
+#zplug "zsh-users/zsh-history-substring-search"
+#
+## source plugins and add commands to $PATH
+#zplug load --verbose
+
