@@ -70,6 +70,8 @@ alias cma='git commit -am'
 alias add='git add'
 alias dif='git diff'
 
+alias vi='nvim'
+
 ######################################################################
 # dir bookmarks
 #
