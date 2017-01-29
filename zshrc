@@ -51,17 +51,44 @@ $p_cdir$p_git
 $p_host %* %# "
 
 ######################################################################
-# alias
+# shell
 #
-alias la='ls -lat'
+alias so='source ~/.zprofile'
+
+######################################################################
+# ls
+#
+case "${OSTYPE}" in
+	darwin*)
+		LSOPT="-G"
+		;;
+	*)
+		LSOPT="--color"
+		;;
+esac
+alias ls="ls ${LSOPT}"
+alias ll="ls -lt"
+alias la="ls -la"
+alias lt="ls -lat"
+
+
+######################################################################
+# docker
+#
 alias dl='docker ps -l -q'
 alias da='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 
+######################################################################
+# vi
+#
+alias vi='nvim'
 alias vip='vi ~/.zprofile'
 alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
-alias so='source ~/.zprofile'
 
+######################################################################
+# git
+#
 alias lg='git lg'
 alias lga='git lga'
 alias st='git st'
@@ -69,8 +96,7 @@ alias cm='git commit -m'
 alias cma='git commit -am'
 alias add='git add'
 alias dif='git diff'
-
-alias vi='nvim'
+alias co='git checkout'
 
 ######################################################################
 # dir bookmarks
