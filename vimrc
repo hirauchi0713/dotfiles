@@ -34,6 +34,9 @@ map <Space>> :set nu<CR>
 map <Space>< :set nonu<CR>
 
 map <Space>ev :e ~/.vimrc<CR>
+map <Space>en :e ~/.config/nvim/init.vim<CR>
+map <Space>er :e ~/.zshrc<CR>
+map <Space>ep :e ~/.zprofile<CR>
 
 map <Space>/ :noh<CR>
 map <Space>- <C-W><C-S>
