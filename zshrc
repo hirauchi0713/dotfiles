@@ -1,20 +1,75 @@
 ######################################################################
-# プロンプト
-setopt prompt_subst
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
+# setopt
+#
+setopt interactive_comments
+setopt auto_list
+setopt auto_menu
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt ignore_eof #^Dでシェルを終了しない
+setopt inc_append_history
+setopt magic_equal_subst
+setopt notify
+setopt print_eight_bit
+setopt print_exit_value
+setopt pushd_ignore_dups
+setopt rm_star_wait
+setopt share_history
+setopt auto_cd
 
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr "+"
-zstyle ':vcs_info:*' unstagedstr "+"
-zstyle ':vcs_info:*' formats '%F{green}[%b] %c%u%f'
-zstyle ':vcs_info:*' actionformats '%F{red}[%b|%a] %c%u%f'
-function _update_vcs_info_msg() {
-	LANG=en_US.UTF-8 vcs_info
-	RPROMPT="${vcs_info_msg_0_}"
+######################################################################
+# prompt
+#
+
+autoload -Uz colors
+colors
+
+function git_branch() {
+	echo -n "[$(git name-rev --name-only HEAD 2> /dev/null)]"
 }
-add-zsh-hook precmd _update_vcs_info_msg
 
+function git_status() {
+	if [[ $(git status --porcelain 2>/dev/null | tail -n1) ]]; then
+		echo -n "%{$fg[red]%} x %{${reset_color}%}"
+	else
+		echo -n "%{$fg[green]%} o %{${reset_color}%}"
+	fi
+}
+
+setopt prompt_subst
+setopt transient_rprompt
+local p_host="%{$terminfo[bold]$fg[black]}%}%{${bg[white]}%}[%m]%{${reset_color}%}"
+local p_cdir="%F{cyan}[%~]%f"
+local p_git='%F{blue}$(git_branch)%f'
+local p_gitst='$(git_status)'
+PROMPT="
+$p_cdir$p_git$p_gitst
+$p_host %* %# "
+
+#autoload -Uz vcs_info
+#zstyle ':vcs_info:git:*' check-for-changes true
+#zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+#zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+#zstyle ':vcs_info:git:*' formats "%F{green}%c%u[%b]%f"
+#zstyle ':vcs_info:git:*' actionformats '[%b|%a] '
+#
+#precmd () { vcs_info }
+#RPROMPT='${vcs_info_msg_0_}'"[%* %n@%m]"
+#PROMPT="%~ %# "
+
+######################################################################
+# zplug
+#
+#export ZPLUG_HOME=$HOME/.zplug
+#source $ZPLUG_HOME/init.zsh
+#
+#zplug "zsh-users/zsh-history-substring-search"
+#
+## source plugins and add commands to $PATH
+#zplug load --verbose
 
 ######################################################################
 # alias

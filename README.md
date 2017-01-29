@@ -3,3 +3,4 @@
 zsh
 vim
 git
+go
