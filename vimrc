@@ -60,3 +60,32 @@ hi clear CursorLine
 "html tag match
 source $VIMRUNTIME/macros/matchit.vim
 let b:match_words = "<div:</div>,<p:</p>,<section:</section>"
+
+"
+" my openbrowser
+"
+if has("mac")
+	function! HandleURI()
+		let l:uri=matchstr(getline("."), '[a-z]*:\/\/[^>,;:]*')
+		echo l:uri
+		if l:uri != ""
+			exec '!open "' . l:uri . '"'
+		else
+			let l:issue=matchstr(getline("."), '#[0-9]\+')
+			"l:issue=matchstr(l:issue, '[0-9]\+')
+			echo l:issue
+			if l:issue != ""
+				exec "!open 'https://redmine.tridentworks.co.jp/issues/" . l:issue[1:] . "'"
+			else
+				echo "Not Link"
+			endif
+		endif
+	endfunction
+	map <Space>w :call HandleURI()<CR>
+endif
+
+"
+" .memo syntax hilight
+"
+au BufRead,BufNewFile *.memo set filetype=memo
+

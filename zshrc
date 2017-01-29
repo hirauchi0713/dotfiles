@@ -85,6 +85,7 @@ alias vi='nvim'
 alias vip='vi ~/.zprofile'
 alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
+alias vit='vi ~/.memo'
 
 ######################################################################
 # git
