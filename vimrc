@@ -11,6 +11,11 @@ set modeline
 
 set ambiwidth=double
 
+"
+" clipboard
+"
+map <C-c> "*Y
+map <C-x> "*D
 
 set ts=4
 set sw=4
@@ -66,9 +71,11 @@ let b:match_words = "<div:</div>,<p:</p>,<section:</section>"
 "
 if has("mac")
 	function! HandleURI()
-		let l:uri=matchstr(getline("."), '[a-z]*:\/\/[^>,;:]*')
+		let l:uri=matchstr(getline("."), '[a-z]*:\/\/[^>,;:\[\]]*')
 		echo l:uri
 		if l:uri != ""
+			let l:uri = substitute(l:uri, '#', '\\#', "ge")
+			let l:uri = substitute(l:uri, '%', '\\%', "ge")
 			exec '!open "' . l:uri . '"'
 		else
 			let l:issue=matchstr(getline("."), '#[0-9]\+')
