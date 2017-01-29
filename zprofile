@@ -21,8 +21,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 #
 # go
 #
-#export GOROOT=/usr/local/go
-#export PATH=$PATH:$GOROOT/bin
-#export GOPATH=$HOME/.go
-#export PATH=$PATH:$GOPATH/bin
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
 #export GO15VENDOREXPERIMENT=1 # for glide
