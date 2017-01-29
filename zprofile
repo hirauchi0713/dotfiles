@@ -16,6 +16,7 @@ fi
 # path
 #
 export PATH=$HOME/.local/bin:$PATH  #for home local
+export XDG_CONFIG_HOME="$HOME/.config"
 
 #
 # go
