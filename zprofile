@@ -1,2 +1,20 @@
-source ~/.bash_profile
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+#
+# path
+#
+export PATH=$HOME/.local/bin:$PATH  #for home local
+
+#
+# go
+#
+#export GOROOT=/usr/local/go
+#export PATH=$PATH:$GOROOT/bin
+#export GOPATH=$HOME/.go
+#export PATH=$PATH:$GOPATH/bin
+#export GO15VENDOREXPERIMENT=1 # for glide
+
+#
+# .zprofile_local
+#
+if [ -f ~/.zprofile_local ]; then
+	source ~/.zprofile_local
+fi
