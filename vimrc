@@ -42,6 +42,7 @@ map <Space>ev :e ~/.vimrc<CR>
 map <Space>en :e ~/.config/nvim/init.vim<CR>
 map <Space>er :e ~/.zshrc<CR>
 map <Space>ep :e ~/.zprofile<CR>
+map <Space>et :e ~/.memo<CR>
 
 map <Space>/ :noh<CR>
 map <Space>- <C-W><C-S>
