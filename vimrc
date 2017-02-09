@@ -9,7 +9,7 @@ set modeline
 
 set ambiwidth=double
 
-set clipboard=unnamed,autoselect
+"set clipboard=unnamed,autoselect
 
 set ts=4
 set sw=4
