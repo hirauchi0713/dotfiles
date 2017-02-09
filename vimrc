@@ -1,7 +1,7 @@
 syntax enable
 set background=dark
 
-"colorscheme solarized
+colorscheme solarized
 "set clipboard=unnamed,autoselect
 
 "abbr
@@ -43,6 +43,7 @@ map <Space>en :e ~/.config/nvim/init.vim<CR>
 map <Space>er :e ~/.zshrc<CR>
 map <Space>ep :e ~/.zprofile<CR>
 map <Space>et :e ~/.memo<CR>
+map <Space>e1 :e ~/.go/src/github.com/hirauchi0713/ea/README.memo<CR>
 
 map <Space>/ :noh<CR>
 map <Space>- <C-W><C-S>
@@ -97,3 +98,8 @@ endif
 "
 au BufRead,BufNewFile *.memo set filetype=memo
 
+"
+" url-shortener
+" https://github.com/twhirauchi/url-shortener
+"
+map <Space>W ci]<C-R>=system("~/.local/bin/url-shortener "."<C-R>"")<CR><ESC>
