@@ -6,3 +6,4 @@ install:
 	ln -sf ${PWD}/gitconfig           ~/.gitconfig
 	ln -sf ${PWD}/zshrc               ~/.zshrc
 	ln -sf ${PWD}/zprofile            ~/.zprofile
+	ln -sf ${PWD}/config              ~/.config
