@@ -12,6 +12,12 @@ set modeline
 set ambiwidth=double
 
 "
+"親ディレクトリにあるtagsファイルもサーチ
+"
+set tags=tags;
+
+
+"
 " clipboard
 "
 map <C-c> "*Y
