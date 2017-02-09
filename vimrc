@@ -1,6 +1,6 @@
 syntax enable
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 "abbr
 ab ml1 # vim: set et sw=2 ts=2 ai si:
