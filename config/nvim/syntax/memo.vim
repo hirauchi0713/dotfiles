@@ -10,6 +10,7 @@ syntax match Issue /#[0-9]* \S*/
 syntax match Item /　*・\S*/
 syntax match Paragraph /　[^・]*/
 syntax match Comment /;.*/
+syntax match Condition /＠.*/
 syntax match HR /^--------------------------------------------------------------------------------$/
 
 highlight GTD_Status ctermfg=5 ctermbg=0 cterm=bold
@@ -18,6 +19,7 @@ highlight Issue      ctermfg=LightGreen
 highlight Item       ctermfg=1
 highlight Paragraph  ctermfg=DarkGray
 highlight HR         ctermfg=DarkGray ctermbg=0
+highlight Condition  ctermfg=3 ctermbg=0
 
 highlight Comment    ctermfg=DarkGray
 highlight Normal     ctermfg=DarkGray

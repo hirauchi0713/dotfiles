@@ -52,6 +52,12 @@ set cursorline
 hi CursorLineNr term=bold   cterm=bold ctermfg=228 ctermbg=NONE
 hi clear CursorLine
 
+"
+" URLを開いたり、Redmineのチケットを開いたり
+"
+map <Space>w yi]:!open <C-R>"<CR>
+map <Space>r yiw:!open https://redmine.tridentworks.co.jp/issues/<C-R>"<CR>
+
 
 "html tag match
 source $VIMRUNTIME/macros/matchit.vim
