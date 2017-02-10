@@ -113,3 +113,9 @@ fi
 ## source plugins and add commands to $PATH
 #zplug load --verbose
 
+
+######################################################################
+# autojump
+#
+[[ -s /Users/hirauchi/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hirauchi/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
