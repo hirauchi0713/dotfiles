@@ -33,6 +33,7 @@ map <Space>> :set nu<CR>
 map <Space>< :set nonu<CR>
 
 map <Space>ev :e ~/.vimrc<CR>
+map <Space>et :e ~/.memo<CR>
 
 map <Space>/ :noh<CR>
 map <Space>- <C-W><C-S>
