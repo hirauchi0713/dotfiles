@@ -32,7 +32,7 @@ function git_prompt() {
 	if [[ -n $branch ]]; then
 		local p_branch="%{$fg[blue]%}[$branch]%{$reset_color%}"
 		local p_status
-		if [[ $(git status --porcelain 2>/dev/null) ]]; then
+		if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
 			p_status="%{$fg[red]%} x %{${reset_color}%}"
 		else
 			p_status="%{$fg[green]%} o %{${reset_color}%}"
