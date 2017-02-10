@@ -29,7 +29,7 @@ colors
 
 function git_prompt() {
 	local branch=$(git name-rev --name-only HEAD 2> /dev/null)
-	if [[ $branch ]]; then
+	if [[ -n $branch ]]; then
 		local p_branch="%{$fg[blue]%}[$branch]%{$reset_color%}"
 		local p_status
 		if [[ $(git status --porcelain 2>/dev/null) ]]; then
@@ -53,13 +53,17 @@ $p_host %* %# "
 ######################################################################
 # alias
 #
-alias la='ls -lat'
+alias ls='ls -G'
+alias la='ls -la'
+alias ll='ls -l'
 alias dl='docker ps -l -q'
 alias da='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 
+alias vi='nvim'
 alias vip='vi ~/.zprofile'
 alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
+alias vit='vi ~/.memo'
 alias so='source ~/.zprofile'
 
 alias lg='git lg'
