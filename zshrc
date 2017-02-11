@@ -79,6 +79,18 @@ alias cma='git commit -am'
 alias add='git add'
 alias dif='git diff'
 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias -g G='| grep'
+alias -g L='| less'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g S='| sort'
+alias -g W='| wc'
+alias -g X='| xargs'
+
 ######################################################################
 # dir bookmarks
 #
