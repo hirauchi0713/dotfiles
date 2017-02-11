@@ -53,7 +53,7 @@ $p_host %* %# "
 ######################################################################
 # alias
 #
-if test "$HOST" = "mac.local" ; then
+if test "$HOST" = "mac.local"; then
 	alias ls='ls -G'
 else
 	alias ls='ls --color'
