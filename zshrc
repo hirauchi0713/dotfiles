@@ -126,7 +126,7 @@ fi
 ######################################################################
 # autojump
 #
-[[ -s /Users/hirauchi/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hirauchi/.autojump/etc/profile.d/autojump.sh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 ######################################################################

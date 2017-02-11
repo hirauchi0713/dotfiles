@@ -9,3 +9,4 @@ install:
 	ln -snf ${PWD}/config                       ~/.config
 	ln -snf ${PWD}/iterm2                       ~/.iterm2
 	ln -snf ${PWD}/iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
+	ln -snf ${PWD}/autojump                     ~/.autojump
