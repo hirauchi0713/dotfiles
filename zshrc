@@ -53,7 +53,11 @@ $p_host %* %# "
 ######################################################################
 # alias
 #
-alias ls='ls -G'
+if [ "$HOST"="mac.local" ] ; then
+	alias ls='ls -G'
+fi
+
+
 alias la='ls -la'
 alias ll='ls -l'
 alias dl='docker ps -l -q'
