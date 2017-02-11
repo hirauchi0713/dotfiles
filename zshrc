@@ -123,3 +123,8 @@ fi
 #
 [[ -s /Users/hirauchi/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hirauchi/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
+
+######################################################################
+# iTerm2
+#
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
