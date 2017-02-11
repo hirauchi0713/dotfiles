@@ -55,8 +55,9 @@ $p_host %* %# "
 #
 if [ "$HOST"="mac.local" ] ; then
 	alias ls='ls -G'
+else
+	alias ls='ls --color'
 fi
-
 
 alias la='ls -la'
 alias ll='ls -l'
