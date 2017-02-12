@@ -144,4 +144,25 @@ autoload -U compinit && compinit -u
 ######################################################################
 # iTerm2
 #
+
+#
+# シェル統合
+#
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#
+# タブの色を変える
+#
+#引数: R G B
+tab-color() {
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+#
+# タブの色を戻す
+#
+tab-reset() {
+    echo -ne "\033]6;1;bg;*;default\a"
+}
