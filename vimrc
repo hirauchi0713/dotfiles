@@ -3,7 +3,8 @@ set background=dark
 "colorscheme solarized
 
 "abbr
-ab ml1 # vim: set et sw=2 ts=2 ai si:
+"2-space-tab mode line
+ab ml1 # vim: set et sw=2 ts=2 sts=2 ai si:
 
 set modeline
 
