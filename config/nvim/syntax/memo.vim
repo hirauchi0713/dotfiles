@@ -17,11 +17,11 @@ highlight GTD_Status ctermfg=5 ctermbg=0 cterm=bold
 highlight Client     ctermfg=4
 highlight Issue      ctermfg=LightGreen
 highlight Item       ctermfg=1
-highlight Paragraph  ctermfg=DarkGray
+highlight Paragraph  ctermfg=Gray
 highlight HR         ctermfg=DarkGray ctermbg=0
 highlight Condition  ctermfg=3 ctermbg=0
 
 highlight Comment    ctermfg=DarkGray
-highlight Normal     ctermfg=DarkGray
+highlight Normal     ctermfg=Gray
 highlight NonText    ctermfg=DarkGray ctermbg=Black
 highlight CursorLine cterm=underline
