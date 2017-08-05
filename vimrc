@@ -4,6 +4,14 @@ set background=dark
 
 "abbr
 ab ml1 # vim: set et sw=2 ts=2 ai si:
+ab cl class="<ESC>i
+ab bg background
+
+ab scr <script type="text/javascript"><CR><TAB>$(function() {<CR>});<CR><BS></script>
+ab jfn function() {<CR>}
+
+ab meq @media screen and (min-width: {{style.breakpoint-tablet}}px+1)<CR>@media screen and (min-width: {{style.breakpoint-sp}}px+1) and (max-width: {{style.breakpoint-tablet}}px)<CR>@media screen and (max-width: {{style.breakpoint-sp}}px)
+
 
 set modeline
 
@@ -11,8 +19,9 @@ set ambiwidth=double
 
 "set clipboard=unnamed,autoselect
 
-set ts=4
-set sw=4
+set et
+set ts=2
+set sw=2
 set ai
 set si
 
@@ -27,13 +36,16 @@ set undodir=/tmp
 set hls
 set autochdir
 set nu
-set noexpandtab
 
 map <Space>> :set nu<CR>
 map <Space>< :set nonu<CR>
 
 map <Space>ev :e ~/.vimrc<CR>
 map <Space>et :e ~/.memo<CR>
+
+map <Space>etph :e ~/proj/cam_online_gacha/src/parts/TopPage/HeroSlide/parts.liquid<CR>
+map <Space>esth :e ~/proj/cam_online_gacha/src/parts/Structure/Header/parts.liquid<CR>
+
 
 map <Space>/ :noh<CR>
 map <Space>- <C-W><C-S>

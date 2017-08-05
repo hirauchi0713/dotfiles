@@ -19,6 +19,7 @@ setopt pushd_ignore_dups
 setopt rm_star_wait
 setopt share_history
 setopt auto_cd
+setopt RM_STAR_SILENT # rm *で確認を求める機能を無効化
 
 ######################################################################
 # prompt
