@@ -4,14 +4,12 @@ set background=dark
 
 "abbr
 ab ml1 # vim: set et sw=2 ts=2 ai si:
-ab cl class="<ESC>i
-ab bg background
 
-ab scr <script type="text/javascript"><CR><TAB>$(function() {<CR>});<CR><BS></script>
-ab jfn function() {<CR>}
-
+"media query
 ab meq @media screen and (min-width: {{style.breakpoint-tablet}}px+1)<CR>@media screen and (min-width: {{style.breakpoint-sp}}px+1) and (max-width: {{style.breakpoint-tablet}}px)<CR>@media screen and (max-width: {{style.breakpoint-sp}}px)
 
+"2-space-tab mode line
+ab ml1 # vim: set et sw=2 ts=2 sts=2 ai si:
 
 set modeline
 
