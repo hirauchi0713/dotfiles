@@ -54,7 +54,7 @@ $p_host %* %# "
 ######################################################################
 # alias
 #
-if test "$HOST" = "mac.local"; then
+if test "$HOST" = "hhmac.local"; then
 	alias ls='ls -G'
 else
 	alias ls='ls --color'
@@ -65,7 +65,7 @@ alias ll='ls -l'
 alias dl='docker ps -l -q'
 alias da='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 
-alias vi='nvim'
+alias vi='vim'
 alias vip='vi ~/.zprofile'
 alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
