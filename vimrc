@@ -2,8 +2,21 @@ syntax enable
 set background=dark
 "colorscheme solarized
 
+imap jj <ESC>
+
 "abbr
 ab ml1 # vim: set et sw=2 ts=2 ai si:
+
+"backspaceの見えない壁を消す
+set backspace=indent,eol,start
+
+"ノーマルモードを日本語で動かす
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
 
 "media query
 ab meq @media screen and (min-width: {{style.breakpoint-tablet}}px+1)<CR>@media screen and (min-width: {{style.breakpoint-sp}}px+1) and (max-width: {{style.breakpoint-tablet}}px)<CR>@media screen and (max-width: {{style.breakpoint-sp}}px)
@@ -47,7 +60,7 @@ map <Space>esth :e ~/proj/cam_online_gacha/src/parts/Structure/Header/parts.liqu
 
 map <Space>/ :noh<CR>
 map <Space>- <C-W><C-S>
-map <Space>_ <C-W><C-V>
+map <Space>\ <C-W><C-V>
 map <Space>, <C-W>c
 
 map <Space>l <C-W>l
