@@ -79,6 +79,7 @@ alias cm='git commit -m'
 alias cma='git commit -am'
 alias add='git add'
 alias dif='git diff'
+alias difc='git diff HEAD HEAD^'
 
 alias rm='rm -i'
 alias cp='cp -i'

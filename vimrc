@@ -4,6 +4,20 @@ set background=dark
 
 imap jj <ESC>
 
+"RuboCop
+"let g:vimrubocop_config = '/Users/hirauchi/proj/shelfy/.rubocop.yml'
+
+""
+"" Plug
+""
+"call plug#begin('~/.vim/plugged')
+""
+"" JSX
+""
+"Plug 'othree/yajs.vim'
+"Plug 'maxmellon/vim-jsx-pretty'
+"call plug#end()
+
 "abbr
 ab ml1 # vim: set et sw=2 ts=2 ai si:
 
@@ -47,6 +61,9 @@ set undodir=/tmp
 set hls
 set autochdir
 set nu
+
+" 「;」は、「親ディレクトリを探していく」というもの
+set tags=./tags;
 
 map <Space>> :set nu<CR>
 map <Space>< :set nonu<CR>
