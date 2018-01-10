@@ -80,6 +80,7 @@ alias cma='git commit -am'
 alias add='git add'
 alias dif='git diff'
 alias difc='git diff HEAD HEAD^'
+alias hardreset='git reset --hard HEAD'
 
 alias rm='rm -i'
 alias cp='cp -i'
