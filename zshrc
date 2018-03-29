@@ -56,6 +56,8 @@ $p_host %* %# "
 #
 if test "$HOST" = "hhmac.local"; then
 	alias ls='ls -G'
+elif test "$HOST" = "hhmac"; then
+	alias ls='ls -G'
 else
 	alias ls='ls --color'
 fi
@@ -158,23 +160,99 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 #
 #引数: R G B
 tab-color() {
-    echo -ne "\033]6;1;bg;red;brightness;$1\a"
-    echo -ne "\033]6;1;bg;green;brightness;$2\a"
-    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+  echo -ne "\033]6;1;bg;red;brightness;$1\a"
+  echo -ne "\033]6;1;bg;green;brightness;$2\a"
+  echo -ne "\033]6;1;bg;blue;brightness;$3\a"
 }
 
 #
 # タブの色を戻す
 #
 tab-reset() {
-    echo -ne "\033]6;1;bg;*;default\a"
+  echo -ne "\033]6;1;bg;*;default\a"
+}
+
+#
+# タブの名前を変える
+#
+tab-name() {
+  echo -ne "\033]0;$1\007"
 }
 
 #
 # rootの時はタブを赤くする
 #
 superuser() {
-	tab-color 200 0 0
-	su
-	tab-reset
+  tab-color 200 0 0
+  su
+  tab-reset
 }
+
+
+#
+# pyenv
+#
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+#
+# java
+#
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+#
+# node(nodebrew)
+#
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+#
+# local settings
+#
+source ~/.env
+
+# mac aws
+#
+source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+alias ec2app="ssh -i $EC2_PEM  $EC2_USER@$EC2_HOST"
+alias ec2mid="ssh -i $EC2_PEM  $MID_USER@$MID_HOST"
+
+
+
+######################################################################
+# gr8
+#
+alias gr8='./gr8'
+alias gsource='source setenv.sh'
+alias ghist='gr8 hist'
+alias gnew='gr8 new'
+alias gedit='gr8 edit'
+alias gshow='gr8 show'
+alias gup='gr8 up'
+alias gdown='gr8 down'
+alias gredo='gr8 redo'
+alias gedithist='vi migr8/history.txt'
+alias ghistedit='gedithist'
+alias d='(){ psql postgres -c "\d+ $1" }'
+alias dT='(){ psql postgres -c "\dT+ $1" }'
+alias gg='ghist | grep'
+
+######################################################################
+# perl
+#
+PATH="/Users/hirauchi/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/hirauchi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/hirauchi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/hirauchi/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/hirauchi/perl5"; export PERL_MM_OPT;
+
+
+
+######################################################################
+# ssh
+#
+alias devops="tab-color   0 200   0; tab-name devops; ssh devops; tab-reset; tab-name ${HOST}"
+alias   mock="tab-color 200   0   0; tab-name mock;   ssh mock;   tab-reset; tab-name ${HOST}"
+alias serval="tab-color   0   0 200; tab-name serval; ssh serval; tab-reset; tab-name ${HOST}"
+alias     hh="tab-color 200   0 200; tab-name hh;     ssh hh;     tab-reset; tab-name ${HOST}"
