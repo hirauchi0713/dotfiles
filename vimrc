@@ -1,3 +1,8 @@
+"
+" ファイル末尾に改行を挿入しないようにする
+"
+:set nofixeol
+
 syntax enable
 set background=dark
 "colorscheme solarized
