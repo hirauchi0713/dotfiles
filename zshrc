@@ -198,9 +198,9 @@ superuser() {
 #
 # pyenv
 #
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 #
 # java
@@ -220,9 +220,9 @@ source ~/.env
 
 # mac aws
 #
-source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
-alias ec2app="ssh -i $EC2_PEM  $EC2_USER@$EC2_HOST"
-alias ec2mid="ssh -i $EC2_PEM  $MID_USER@$MID_HOST"
+# source /usr/local/share/zsh/site-functions/aws_zsh_completer.sh
+# alias ec2app="ssh -i $EC2_PEM  $EC2_USER@$EC2_HOST"
+# alias ec2mid="ssh -i $EC2_PEM  $MID_USER@$MID_HOST"
 
 
 ######################################################################
