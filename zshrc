@@ -64,8 +64,6 @@ fi
 
 alias la='ls -la'
 alias ll='ls -l'
-alias dl='docker ps -l -q'
-alias da='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 
 alias vi='vim'
 alias vip='vi ~/.zprofile'
@@ -73,16 +71,24 @@ alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
 alias vit='vi ~/.memo'
 alias so='source ~/.zprofile'
+alias sor='source ~/.zshrc'
 
-alias lg='git lg'
+##############################
+# git
+#
 alias lga='git lga'
-alias st='git st'
-alias cm='git commit -m'
-alias cma='git commit -am'
-alias add='git add'
-alias dif='git diff'
 alias difc='git diff HEAD HEAD^'
 alias hardreset='git reset --hard HEAD'
+
+alias commit='git commit'
+alias push='git push'
+alias pull='git pull'
+alias add='git add'
+alias dif='git diff'
+alias co='git checkout'
+alias lg='git lg'
+alias st='git st'
+alias br='git branch'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -219,25 +225,6 @@ alias ec2app="ssh -i $EC2_PEM  $EC2_USER@$EC2_HOST"
 alias ec2mid="ssh -i $EC2_PEM  $MID_USER@$MID_HOST"
 
 
-
-######################################################################
-# gr8
-#
-alias gr8='./gr8'
-alias gsource='source setenv.sh'
-alias ghist='gr8 hist'
-alias gnew='gr8 new'
-alias gedit='gr8 edit'
-alias gshow='gr8 show'
-alias gup='gr8 up'
-alias gdown='gr8 down'
-alias gredo='gr8 redo'
-alias gedithist='vi migr8/history.txt'
-alias ghistedit='gedithist'
-alias d='(){ psql postgres -c "\d+ $1" }'
-alias dT='(){ psql postgres -c "\dT+ $1" }'
-alias gg='ghist | grep'
-
 ######################################################################
 # perl
 #
@@ -248,7 +235,6 @@ PERL_MB_OPT="--install_base \"/Users/hirauchi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/hirauchi/perl5"; export PERL_MM_OPT;
 
 
-
 ######################################################################
 # ssh
 #
@@ -256,3 +242,17 @@ alias devops="tab-color   0 200   0; tab-name devops; ssh devops; tab-reset; tab
 alias   mock="tab-color 200   0   0; tab-name mock;   ssh mock;   tab-reset; tab-name ${HOST}"
 alias serval="tab-color   0   0 200; tab-name serval; ssh serval; tab-reset; tab-name ${HOST}"
 alias     hh="tab-color 200   0 200; tab-name hh;     ssh hh;     tab-reset; tab-name ${HOST}"
+
+
+######################################################################
+# yarn
+#
+alias ya="yarn"
+
+
+######################################################################
+# docker
+#
+alias dl='docker ps -l -q'
+alias da='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
+alias dc='docker-compose'
