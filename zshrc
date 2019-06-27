@@ -65,7 +65,7 @@ fi
 alias la='ls -la'
 alias ll='ls -l'
 
-alias vi='vim'
+alias vi='nvim'
 alias vip='vi ~/.zprofile'
 alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
@@ -256,3 +256,23 @@ alias ya="yarn"
 alias dl='docker ps -l -q'
 alias da='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dc='docker-compose'
+
+
+######################################################################
+# tmux
+#
+alias tmux='tmux -u'
+
+
+######################################################################
+# user local bin
+#
+PATH=/usr/local/bin:$PATH
+
+
+
+
+######################################################################
+# rbenv
+#
+eval "$(rbenv init -)"
