@@ -308,3 +308,4 @@ export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 export LDFLAGS="-L/usr/local/opt/php@7.2/lib"
 export CPPFLAGS="-I/usr/local/opt/php@7.2/include"
+ source ~/perl5/perlbrew/etc/bashrc
