@@ -47,8 +47,7 @@ setopt prompt_subst
 local p_host="[%m]"
 local p_cdir="%F{cyan}[%~]%f"
 local p_git='$(git_prompt)%f'
-PROMPT="
-$p_cdir$p_git
+PROMPT="$p_cdir$p_git
 $p_host %* %# "
 
 ######################################################################
@@ -58,6 +57,8 @@ if test "$HOST" = "hhmac.local"; then
 	alias ls='ls -G'
 elif test "$HOST" = "hhmac"; then
 	alias ls='ls -G'
+elif test "$HOST" = "hhmbp2.local"; then
+	alias ls='ls -G'
 else
 	alias ls='ls --color'
 fi
@@ -65,7 +66,7 @@ fi
 alias la='ls -la'
 alias ll='ls -l'
 
-alias vi='nvim'
+alias vi='vim'
 alias vip='vi ~/.zprofile'
 alias vir='vi ~/.zshrc'
 alias vil='vi ~/.zprofile_local'
@@ -269,10 +270,41 @@ alias tmux='tmux -u'
 #
 PATH=/usr/local/bin:$PATH
 
-
-
-
 ######################################################################
 # rbenv
 #
 eval "$(rbenv init -)"
+
+######################################################################
+#
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/hirauchi0713/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/hirauchi0713/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/hirauchi0713/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/hirauchi0713/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+######################################################################
+# others
+#
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH=$PATH:~/.roswell/bin
+
+
+######################################################################
+# PHP
+#
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export LDFLAGS="-L/usr/local/opt/php@7.2/lib"
+export CPPFLAGS="-I/usr/local/opt/php@7.2/include"
