@@ -53,15 +53,7 @@ $p_host %* %# "
 ######################################################################
 # alias
 #
-if test "$HOST" = "hhmac.local"; then
-	alias ls='ls -G'
-elif test "$HOST" = "hhmac"; then
-	alias ls='ls -G'
-elif test "$HOST" = "hhmbp2.local"; then
-	alias ls='ls -G'
-else
-	alias ls='ls --color'
-fi
+alias ls='ls -G'
 
 alias la='ls -la'
 alias ll='ls -l'
@@ -229,11 +221,11 @@ source ~/.env
 ######################################################################
 # perl
 #
-PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
+# PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 
 ######################################################################
@@ -273,7 +265,7 @@ PATH=/usr/local/bin:$PATH
 ######################################################################
 # rbenv
 #
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 ######################################################################
 #
@@ -308,4 +300,3 @@ export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
 export LDFLAGS="-L/usr/local/opt/php@7.2/lib"
 export CPPFLAGS="-I/usr/local/opt/php@7.2/include"
- source ~/perl5/perlbrew/etc/bashrc
